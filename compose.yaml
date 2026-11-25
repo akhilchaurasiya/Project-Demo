@@ -1,0 +1,14 @@
+services:
+  employee-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: employee-app
+    ports:
+      - "8081:8081"
+    environment:
+      DB_URL: jdbc:mysql://host.docker.internal:3306/employee2026
+      DB_USERNAME: root
+      DB_PASSWORD: 123456
+    restart: unless-stopped
+
